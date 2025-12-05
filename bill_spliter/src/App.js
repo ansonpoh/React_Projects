@@ -3,8 +3,8 @@ import { Plus, Minus, Calculator, Users, Receipt, DollarSign } from 'lucide-reac
 
 function App() {
   const [totalBill, setTotalBill] = useState(0)
-  const [gstRate] = useState(7) // Fixed 7% GST
-  const [serviceChargeRate] = useState(10) // Fixed 10% service charge
+  const [gstRate] = useState(7)
+  const [serviceChargeRate] = useState(10)
   const [hasServiceCharge, setHasServiceCharge] = useState(true)
   const [people, setPeople] = useState([
     { id: '1', name: '', amount: 0 },
@@ -98,9 +98,7 @@ function App() {
         </div>
 
         {!showResults ? (
-          /* Main Form */
           <div className="bg-white/70 backdrop-blur-lg rounded-3xl shadow-xl border border-white/20 p-8">
-            {/* Bill Information */}
             <div className="mb-8">
               <h2 className="text-2xl font-semibold text-gray-800 mb-6 flex items-center">
                 <Receipt className="w-6 h-6 mr-2 text-blue-500" />
@@ -143,7 +141,6 @@ function App() {
                 </div>
               </div>
 
-              {/* Tax Information Display */}
               <div className="mt-6 p-4 bg-blue-50 rounded-xl">
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
                   <div>
@@ -166,7 +163,6 @@ function App() {
               </div>
             </div>
 
-            {/* People Section */}
             <div className="mb-8">
               <div className="flex items-center justify-between mb-6">
                 <h2 className="text-2xl font-semibold text-gray-800 flex items-center">
@@ -233,7 +229,6 @@ function App() {
               </div>
             </div>
 
-            {/* Action Buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
               <button
                 onClick={calculateSplit}
@@ -253,7 +248,6 @@ function App() {
             </div>
           </div>
         ) : (
-          /* Results Section */
           <div className="bg-white/70 backdrop-blur-lg rounded-3xl shadow-xl border border-white/20 p-8">
             <div className="flex items-center justify-between mb-8">
               <h2 className="text-2xl font-semibold text-gray-800 flex items-center">
@@ -268,7 +262,6 @@ function App() {
               </button>
             </div>
 
-            {/* Summary */}
             <div className="mb-8 p-6 bg-gradient-to-r from-green-50 to-blue-50 rounded-xl">
               <h3 className="text-lg font-semibold text-gray-800 mb-4">Summary</h3>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
@@ -291,7 +284,6 @@ function App() {
               </div>
             </div>
 
-            {/* Individual Results */}
             <div className="space-y-4">
               <h3 className="text-lg font-semibold text-gray-800">Individual Amounts</h3>
               {results.map((result, index) => (
@@ -326,7 +318,6 @@ function App() {
               ))}
             </div>
 
-            {/* Action Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 mt-8">
               <button
                 onClick={() => setShowResults(false)}
