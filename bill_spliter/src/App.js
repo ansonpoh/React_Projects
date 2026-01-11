@@ -3,8 +3,8 @@ import { Plus, Minus, Calculator, Users, Receipt, DollarSign } from 'lucide-reac
 
 function App() {
   const [totalBill, setTotalBill] = useState(0)
-  const [gstRate] = useState(7) // Fixed 7% GST
-  const [serviceChargeRate] = useState(10) // Fixed 10% service charge
+  const [gstRate] = useState(7)
+  const [serviceChargeRate] = useState(10)
   const [hasServiceCharge, setHasServiceCharge] = useState(true)
   const [people, setPeople] = useState([
     { id: '1', name: '', amount: 0 },
