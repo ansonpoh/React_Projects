@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bill-spliter
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: bill-spliter
+  template:
+    metadata:
+      labels:
+        app: bill-spliter
+    spec:
+      containers:
+        - name: bill-spliter
+          image: bill-spliter:local
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: bill-spliter
+spec:
+  selector:
+    app: bill-spliter
+  ports:
+    - port: 80
+      targetPort: 80
+  type: LoadBalancer
